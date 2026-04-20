@@ -2,8 +2,8 @@
 Changelog for package gz_dartsim_vendor
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.3 (2026-04-20)
+------------------
 * Merge pull request `#9 <https://github.com/gazebo-release/gz_dartsim_vendor/issues/9>`_ from gazebo-release/jrivero/bump_6_16
   Bump dart vendor in rolling to 6.16.6
 * Bump DART version to 6.16.6
