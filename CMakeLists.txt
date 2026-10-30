@@ -43,6 +43,9 @@ ament_vendor(${PROJECT_NAME}
     -DDART_BUILD_GUI_OSG:BOOL=FALSE
     -DDART_BUILD_DARTPY:BOOL=FALSE
     -DDART_BUILD_EXTRAS:BOOL=FALSE
+    # DART before 6.20 sets no language standard, so compilers that default to
+    # C++20 (GCC 16) reject its implicit [=] captures of this under -Werror.
+    -DCMAKE_CXX_STANDARD:STRING=17
   GLOBAL_HOOK
   PATCHES patches
 )
