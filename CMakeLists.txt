@@ -46,6 +46,12 @@ ament_vendor(${PROJECT_NAME}
     # DART before 6.20 sets no language standard, so compilers that default to
     # C++20 (GCC 16) reject its implicit [=] captures of this under -Werror.
     -DCMAKE_CXX_STANDARD:STRING=17
+    # Newer compilers keep adding warnings that DART's -Werror turns into
+    # build failures (e.g. recent Clang's -Wnontrivial-memcall in the bundled ImGui).
+    -DDART_TREAT_WARNINGS_AS_ERRORS:BOOL=OFF
+    # The bundled ImGui is only used by the OSG GUI, which is disabled above;
+    # this skips building it.
+    -DDART_USE_SYSTEM_IMGUI:BOOL=ON
   GLOBAL_HOOK
   PATCHES patches
 )
